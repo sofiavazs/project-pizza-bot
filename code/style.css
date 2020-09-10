@@ -1,41 +1,119 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(238, 231, 213);
-    color: #3333cc;
-    text-align: center;
-  }
-  
-  
-  .main-container { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #3333cc;
+  text-align: center;
+  margin: 0;
+}
 
-  #robotchef img {
-    padding: 26px; 
-    width:50%;
-  }
-  
-  .button {
-    width: 300px;
-    height: 90px;
-    padding: 16px;
-    margin-bottom: 16px;
-    position: relative;
-    border: 3px solid #3333cc;
-    border-radius: 70px;
-    display: inline-block;
-    font-size: 14px;
-  }
-   
-  .button:hover {
-    background: #3333cc;
-    color: #fff;
-  }
-  
-  .call-to-action {
-    font-size: 20px;
-    font-weight: 600;
-  }
-  
+.button {
+  width: 300px;
+  height: 90px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 3px solid #3333cc;
+  border-radius: 70px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.button:hover {
+  background: #3333cc;
+  color: #fff;
+}
+
+.call-to-action {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.chat-container {
+  width: 50%;
+  margin: 0 25% 0 25%;
+  padding: 0;
+  background: rgba(129,196,234,0.4121861832865169);
+  background-attachment: fixed;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+.speech-bot {
+  width: 300px;
+  margin: 16px 0 16px 10%;
+  border-radius: 15px;
+  background: #2626d9;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  display: none;
+  box-shadow: 10px 10px 26px 0px rgba(97, 96, 96, 0.75);
+}
+
+.bot-triangle:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-top: 15px solid #2626d9;
+  border-right: 15px solid #2626d9;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  left: -16px;
+  top: 0px;
+}
+
+.speech-user {
+  width: 300px;
+  align-self: flex-end;
+  margin-right: 10%;
+  margin-bottom: 16px;
+  border-radius: 15px;
+  background: #337fcc;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  display: none;
+  box-shadow: 10px 10px 26px 0px  rgba(97, 96, 96, 0.75);
+}
+
+.user-triangle:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 15px solid #337fcc;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #337fcc;
+  border-bottom: 15px solid transparent;
+  right: -16px;
+  top: 0px;
+}
+
+form {
+  text-align: left;
+}
+
+.quantity {
+  padding-top: 5px;
+}
+
+.orderButton {
+  width: 70px;
+  height: 29px;
+  margin-bottom: 20px;
+  margin-left: 3px;
+  border: 2px solid #3333cc;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  transform: translate( 0, -36%);
+}
+
+.orderButton:focus {
+  background: #0d0df2;
+  color: #fff;
