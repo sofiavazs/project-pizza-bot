@@ -3,12 +3,9 @@ const hawaiian = "Hawaiian Pizza";
 const pepperoni = "Pepperoni Pizza";
 const pizzaPrice = 80;
 
-document.getElementById(
-  "botBubble"
-).innerHTML = `Hey! Happy to get your order started. On our menu we have ${vegetarian}, ${hawaiian}, and ${pepperoni}.`;
+document.getElementById("botBubble").innerHTML = `Hey! Happy to get your order started. On our menu we have ${vegetarian}, ${hawaiian}, and ${pepperoni}.`;
 
-document.getElementById("userBubble").innerHTML =
-  "Ok! (Click to start your order.)";
+document.getElementById("userBubble").innerHTML = "Ok! (Click to start your order.)";
 
 document.getElementById("userBubble").style.cursor = "pointer";
 
@@ -29,9 +26,7 @@ function buttonClicked() {
 function startOrder() {
   const orderForm = document.getElementById("startOrder");
   orderForm.style.display = "block";
-  document.getElementById(
-    "startOrder"
-  ).innerHTML = `<form class="form" onsubmit="validateOrder(event)">
+  document.getElementById("startOrder").innerHTML = `<form class="form" onsubmit="validateOrder(event)">
  
  <div class="pizza_selection">What kind would you like?
  
@@ -47,6 +42,7 @@ function startOrder() {
  <p><button class=".orderButton" type="submit" id="submit" name="submit" value="submit">Order</button></p>
  </form>`;
 }
+
 const calculateTotalCost = (finalOrderQty, pizzaPrice) => {
   return finalOrderQty * pizzaPrice;
 };

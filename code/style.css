@@ -113,7 +113,3 @@ form {
   text-align: center;
   transform: translate( 0, -36%);
 }
-
-.orderButton:focus {
-  background: #0d0df2;
-  color: #fff;
