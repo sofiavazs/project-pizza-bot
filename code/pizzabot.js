@@ -48,32 +48,42 @@ const calculateTotalCost = (finalOrderQty, pizzaPrice) => {
 };
 
 const calculateCookingTime = (finalOrderQty) => {
-  if (finalOrderQty <= 2) {
+  if (finalOrderQty >= 1 && finalOrderQty <=2) {
     return 10;
-  } else if (finalOrderQty <= 5) {
+  } else if (finalOrderQty >=5 && finalOrderQty <=6) {
     return 15;
   } else {
     return 20;
   }
 };
 
-const processOrder = (pizzaChoice) => {
-  const finalOrderQty = document.getElementById("orderQty").value;
-    let orderTotal = calculateTotalCost(finalOrderQty, pizzaPrice);
-    let pizzaCookingTime = calculateCookingTime(finalOrderQty);
-    const orderSummary = document.getElementById("confirmation");
-    orderSummary.style.display = "block";
-    document.getElementById("confirmation").innerHTML = `Great! I will get started on your ${pizzaChoice} right away, it will cost ${orderTotal}kr. The pizza(s) will be ready in ${pizzaCookingTime} minutes.`;
+const processOrder = (pizzaChoice, finalOrderQty) => {
+  let orderTotal = calculateTotalCost(finalOrderQty, pizzaPrice);
+  let pizzaCookingTime = calculateCookingTime(finalOrderQty);
+  const orderSummary = document.getElementById("confirmation");
+  orderSummary.style.display = "block";
+  document.getElementById("confirmation").innerHTML = `Great! I will get started on your ${pizzaChoice} right away, it will cost ${orderTotal}kr. The pizza(s) will be ready in ${pizzaCookingTime} minutes.`;
 };
+
+const validateQuantity = (finalOrderQty) => { 
+  if (finalOrderQty < 1) {
+    return false;
+  } else { 
+    return true;
+  }
+}
 
 const validateOrder = (event) => {
   event.preventDefault(); 
-  if (document.getElementById("vegetarian").checked === true) {
-    processOrder(vegetarian);
+  const finalOrderQty = document.getElementById("orderQty").value;
+  if (validateQuantity(finalOrderQty) === false) {
+    alert("Ooops! Please order a minimum of 1 pizza.");
+  } else if (document.getElementById("vegetarian").checked === true) {
+    processOrder(vegetarian, finalOrderQty);
   } else if (document.getElementById("hawaiian").checked === true) {
-    processOrder(hawaiian);
+    processOrder(hawaiian, finalOrderQty);
   } else {
-    processOrder(pepperoni);
+    processOrder(pepperoni, finalOrderQty);
   }
 };
 
