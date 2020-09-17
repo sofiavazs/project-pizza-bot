@@ -17,4 +17,4 @@ You'll do this project as a pair programming project.
 
 ## View it live 🔴
 
-https://pwangy-pizzabot.netlify.app/
+https://margeritabot.netlify.app/
